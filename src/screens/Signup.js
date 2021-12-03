@@ -9,13 +9,12 @@ import {
   StatusBar,
   SafeAreaView,
   Image,
-  CheckBox,
   Button,
   TouchableWithoutFeedback,
   ScrollView,
   KeyboardAvoidingView
 } from "react-native";
-
+import CheckBox from "expo-checkbox";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import DateTimePicker from "@react-native-community/datetimepicker";
 
@@ -23,7 +22,7 @@ import MyImage from "../assets/images/SignUp";
 
 const SignUp = ({ navigation }) => {
   const [isSelected, setSelection] = React.useState(false);
-  
+
   const options = {
     year: "4-digit",
     month:"2-digit",
@@ -32,7 +31,7 @@ const SignUp = ({ navigation }) => {
 
   // new Date().toLocaleDateString("en-US",options);
 
-  const [date, setDate] = React.useState(new Date().toLocaleDateString("en-US",options)); 
+  const [date, setDate] = React.useState(new Date().toLocaleDateString("en-US",options));
   const [mode, setMode] = React.useState('date');
   const [show, setShow] = React.useState(false);
 
@@ -103,8 +102,8 @@ const SignUp = ({ navigation }) => {
 
           {/* <DatePicker
             style={styles.datePickerStyle}
-            value={date} 
-            mode="date" 
+            value={date}
+            mode="date"
             placeholder="Birthday"
             format="DD-MM-YYYY"
             confirmBtnText="Confirm"
@@ -124,7 +123,7 @@ const SignUp = ({ navigation }) => {
             }}
             onDateChange={setDate}
           /> */}
-          
+
           </View>
 
           <TextInput
@@ -184,7 +183,7 @@ const SignUp = ({ navigation }) => {
               </Text>
             </TouchableOpacity>
           </View>
-          
+
           <View style={{marginTop: 10, alignItems: "center"}}>
             <Text>or continue with</Text>
             <View style={{flexDirection: "row",marginTop: 10,}}>
@@ -231,7 +230,7 @@ const SignUp = ({ navigation }) => {
                 />
               </TouchableOpacity>
               </View>
-          
+
           </View>
 
         </View>

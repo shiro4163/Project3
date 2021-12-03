@@ -40,7 +40,7 @@ const Login = ({ navigation }) => {
       return;
     }
     setLoading(true);
-    fetch('http://192.168.0.212/ehiremo/test.php', {
+    fetch('http://192.168.0.212/ehiremo/mobile_login.php', {
       method: 'POST',
       body: JSON.stringify({
         'username': username,
