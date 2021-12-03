@@ -56,9 +56,15 @@ const Login = ({ navigation }) => {
     .then((responseJson) => {
       //Hide Loader
       setLoading(false);
-      navigation.navigate('Home');
-      if(responseJson){
-
+      const resp = JSON.parse(responseJson);
+      if(resp.isUserExists){
+        if(resp.isAccountVerified){
+          navigation.navigate('Home');
+        } else {
+          navigation.navigate('Verification');
+        }
+      } else {
+        alert("User not found");
       }
     })
     .catch((error) => {
